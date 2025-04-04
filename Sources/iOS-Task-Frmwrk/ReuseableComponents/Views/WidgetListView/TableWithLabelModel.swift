@@ -1,5 +1,5 @@
 //
-//  ListWithLabelModel.swift
+//  TableWithLabelModel.swift
 //  ios-task-fwrk-ui
 //
 //  Created by Ambuj Singh on 02/04/25.
@@ -7,29 +7,31 @@
 
 import SwiftUI
 
-public struct ListWithLabelModel: WidgetTableContentProtocol {
+// MARK: - TableWithLabelModel
+public struct TableWithLabelModel: WidgetTableContentProtocol {
     public var contentType: WidgetContentType
-    public var listTilte: String
-    public var listData: [ListWithLabelViewItem]
+    public var tableTitle: String
+    public var tableData: [TableWithLabelItem]
     public var labelTitle: String?
     public var labelValue: String?
 
     public init(
         contentType: WidgetContentType,
-        listTilte: String,
-        listData: [ListWithLabelViewItem],
+        tableTitle: String,
+        tableData: [TableWithLabelItem],
         labelTitle: String? = nil,
         labelValue: String? = nil
     ) {
         self.contentType = contentType
-        self.listTilte = listTilte
-        self.listData = listData
+        self.tableTitle = tableTitle
+        self.tableData = tableData
         self.labelTitle = labelTitle
         self.labelValue = labelValue
     }
 }
 
-public struct ListWithLabelViewItem {
+// MARK: - TableWithLabelItem
+public struct TableWithLabelItem {
     public var label1, label2: String
 
     public init(label1: String, label2: String) {

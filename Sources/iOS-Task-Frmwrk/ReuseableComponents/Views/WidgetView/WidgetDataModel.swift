@@ -1,5 +1,5 @@
 //
-//  WidgetModel.swift
+//  WidgetDataModel.swift
 //  ios-task-fwrk-ui
 //
 //  Created by Ambuj Singh on 02/04/25.
@@ -16,7 +16,8 @@ public enum WidgetContentType: String, CaseIterable {
     case table
 }
 
-public class WidgetModel {
+// MARK: - WidgetDataModel
+public class WidgetDataModel {
     public var title: String
     public var subtitle: String
     public var widgetContent: WidgetTableContentProtocol

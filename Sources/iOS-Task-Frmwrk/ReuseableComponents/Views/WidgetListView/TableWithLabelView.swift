@@ -1,5 +1,5 @@
 //
-//  ListWithLabelView.swift
+//  TableWithLabelView.swift
 //  ios-task-fwrk-ui
 //
 //  Created by Ambuj Singh on 02/04/25.
@@ -7,23 +7,24 @@
 
 import SwiftUI
 
-public struct ListWithLabelView: View {
-    public var listWithLabelModel: ListWithLabelModel
+// MARK: - TableWithLabelView
+public struct TableWithLabelView: View {
+    public var tableWithLabelModel: TableWithLabelModel
     public var onSelection: (Int) -> Void
 
     public var body: some View {
         List {
             // Optional header for the list
-            if let labelTitle = listWithLabelModel.labelTitle,
-               let labelValue = listWithLabelModel.labelValue {
+            if let labelTitle = tableWithLabelModel.labelTitle,
+               let labelValue = tableWithLabelModel.labelValue {
                 Section(header: Text("\(labelTitle) - \(labelValue)").font(.headline)) {
                     EmptyView() // Placeholder for the header
                 }
             }
 
             // List items
-            ForEach(listWithLabelModel.listData.indices, id: \.self) { index in
-                let item = listWithLabelModel.listData[index]
+            ForEach(tableWithLabelModel.tableData.indices, id: \.self) { index in
+                let item = tableWithLabelModel.tableData[index]
                 Button(action: {
                     onSelection(index) // Trigger the onSelection closure
                 }) {

@@ -6,11 +6,12 @@
 //
 import SwiftUI
 
-public struct WidgetView: View {
-    public let widgetModel: WidgetModel
+// MARK: - WidgetContainerView
+public struct WidgetContainerView: View {
+    public let widgetModel: WidgetDataModel
     public let onSelection: (Int) -> Void
 
-    public init(widgetModel: WidgetModel, onSelection: @escaping (Int) -> Void) {
+    public init(widgetModel: WidgetDataModel, onSelection: @escaping (Int) -> Void) {
         self.widgetModel = widgetModel
         self.onSelection = onSelection
     }
@@ -24,8 +25,8 @@ public struct WidgetView: View {
     @ViewBuilder func contentView() -> some View {
         switch widgetModel.widgetContent.contentType {
         case .table:
-            if let tableModel = widgetModel.widgetContent as? ListWithLabelModel {
-                ListWithLabelView(listWithLabelModel: tableModel) { selectedIndex in
+            if let tableModel = widgetModel.widgetContent as? TableWithLabelModel {
+                TableWithLabelView(tableWithLabelModel: tableModel) { selectedIndex in
                     // Call the onSelection closure with the selected widget model
                     onSelection(selectedIndex)
                 }
