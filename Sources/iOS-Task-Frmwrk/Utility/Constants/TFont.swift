@@ -11,5 +11,4 @@ public enum TFontSize: CGFloat {
     case ten = 10.0
     case twenty = 20.0
     case thirty = 30.0
-    case fourty = 40.0
 }
